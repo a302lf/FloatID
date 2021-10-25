@@ -34,5 +34,3 @@ def analize_object(object):
         idtype = True
     if idtype:
       print(f'{object} is id')
-  
-  
