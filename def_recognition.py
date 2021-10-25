@@ -5,11 +5,11 @@ spsymbs = ['!', '@', '#', '$', '%', '^', '&', '*', '.', ',', '/', '*', '-', '?',
 def analize_object(object):
   lenght = len(object)
   poincount = 0
-  if object[0] in flidtion: 
+  if object[0] in flidtion and lenght>1: 
     for symb in range (lenght):
-      if object[symb] == '.':
+      if object[symb] == flidtion[1]:
         poincount += 1
-        for lastsymb in object[symb+1:lenght]: #FIXME add try exept
+        for lastsymb in object[symb+1:lenght]: 
           if poincount > 1: 
             fltype = False 
             break 
