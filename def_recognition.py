@@ -1,11 +1,12 @@
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 flidtion = [numbers, '.', '-']
-spsymbs = ['!', '@', '#', '$', '%', '^', '&', '*', '.', ',', '/', '*', '-', '?', ':', ';', '_']
+spsymbs = ['!', '@', '#', '$', '%', '^', '&', '*', '.', ',', '/', '*', '-', '?', ':', ';']
+ididtion = [spsymbs, '_']
 
 def analize_object(object):
   lenght = len(object)
   poincount = 0
-  if object[0] in flidtion and lenght>1: 
+  if object[0] in flidtion and lenght > 1: 
     for symb in range (lenght):
       if object[symb] == flidtion[1]:
         poincount += 1
@@ -26,7 +27,7 @@ def analize_object(object):
     print(f'{object} is smth strange')
   else:
     for symb in range (lenght):
-      if object[symb] in spsymbs:
+      if object[symb] in ididtion and lenght == 1:
         idtype = False
         print(f'{object} is smth strange')
         break
