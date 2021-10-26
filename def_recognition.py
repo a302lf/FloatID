@@ -1,7 +1,6 @@
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 flidtion = [numbers, '.', '-']
 spsymbs = ['!', '@', '#', '$', '%', '^', '&', '*', '.', ',', '/', '-', '?', ':', ';']
-ididtion = [spsymbs, '_']
 
 def analize_object(object):
   lenght = len(object)
@@ -18,7 +17,12 @@ def analize_object(object):
             fltype = True
           else:
             fltype = False
-            break         
+            break
+      elif symb in numbers:
+        fltype = False
+      else:
+        fltype = False
+        break
     if fltype:
       print(f'{object} is float')
     else:
@@ -27,11 +31,13 @@ def analize_object(object):
     print(f'{object} is smth strange')
   else:
     for symb in range (lenght):
-      if object[symb] in ididtion and lenght == 1:
+      if object[symb] in spsymbs or object == "_":
         idtype = False
-        print(f'{object} is smth strange')
         break
       else:
         idtype = True
     if idtype:
       print(f'{object} is id')
+    else:
+      print(f'{object} is smth strange')
+      
